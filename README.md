@@ -25,16 +25,9 @@ from sklearn.preprocessing import StandardScaler
 - REFERENCES: sources used throughout project
 
 ## Reproducing results
-SCRIPTS:
+SCRIPTS: The script provided is the final script to clean the data, perform an EDA, and analyze the time series through ARIMAX. 
+1. CLEAN DATA & EDA: date time and average dataframe by year if needed. Plot each variable and visualize correlation matrix.
+2. ANALYSIS: prep ARIMAX by differencing data if they're non-stationary. Forecast future pH using historical CO2, sea surface temp, global temperature, and number of eruptions, then perform statistical tests. Forecast future plankton populations using historical pH measurements, and perform statistical tests.  
 
-1.Tweet_Sentiment_Analysis_&_EDA: Read in Musk tweets dataset imported from Kaggle and perform sentiment analysis and EDA. 
+Output =  EDA graphs, new dataframe (Final Clean Data.csv), statistical summaries of each test
 
-Output = new dataframe (Tweet Sentiment Data.csv), EDA graphs
-
-2.Stock_Price_EDA: Read in Tesla stock prices from yfinance over same period of time as twitter dataset, and perform EDA.
-
-Output = new dataframe (Tesla Stock.csv), EDA graphs
-
-3.Data Analysis: This re-reads in Musk tweets and Tesla stock price dataframes, 1)processes and merges data into 1 dataframe (Merged Data.csv), 2)process merged dataframe for time-series analysis so both sets of data are stationary, and 3)performes multiple statistical analysis' to test relationship between sentiment of Musk's tweets and Tesla stock prices.
-
-Output = new dataframe (Merged Data.csv), and statistical summaries of each test
