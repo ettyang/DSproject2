@@ -15,6 +15,12 @@ from statsmodels.tsa.stattools import adfuller
 import pmdarima as pm
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 from sklearn.preprocessing import StandardScaler
+from functools import reduce
+import seaborn as sns
+from scipy.stats import shapiro
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from sklearn.linear_model import LinearRegression
+import statsmodels.api as sm
 ```
 
 ## Documentation
@@ -26,8 +32,12 @@ from sklearn.preprocessing import StandardScaler
 
 ## Reproducing results
 SCRIPTS: The script provided is the final script to clean the data, perform an EDA, and analyze the time series through ARIMAX. 
-1. CLEAN DATA & EDA: date time and average dataframe by year if needed. Plot each variable and visualize correlation matrix.
-2. ANALYSIS: prep ARIMAX by differencing data if they're non-stationary. Forecast future pH using historical CO2, sea surface temp, global temperature, and number of eruptions, then perform statistical tests. Forecast future plankton populations using historical pH measurements, and perform statistical tests.  
+
+CLEAN DATA & EDA: date time and average dataframe by year if needed. Plot each variable and visualize correlation matrix.
+
+ANALYSIS: prep ARIMAX by differencing data if they're non-stationary. 
+1. Forecast future pH using historical CO2, sea surface temp, global temperature, and number of eruptions, then perform statistical tests.
+2. Forecast future plankton populations using historical pH measurements, and perform statistical tests.  
 
 Output =  EDA graphs, new dataframe (Final Clean Data.csv), statistical summaries of each test
 
